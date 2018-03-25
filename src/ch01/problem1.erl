@@ -12,9 +12,6 @@
 %% API
 -export([isUnique/1]).
 
-
-
-
 isUnique(L) ->
   R=[{X,Y}|| X<-L, Y <- L--[X], X =:= Y],
   case R of
