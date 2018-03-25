@@ -4,18 +4,15 @@
 %%% @doc
 %%%
 %%% @end
-%%% Created : 24. Mar 2018 8:51 PM
+%%% Created : 24. Mar 2018 9:15 PM
 %%%-------------------------------------------------------------------
--module(problem1).
+-module(problem2).
 -author("rahulsinha").
 
 %% API
--export([isUnique/1]).
+-export([isPermutation/2]).
 
-isUnique(L) ->
-  R=[{X,Y}|| X<-L, Y <- L--[X], X =:= Y],
-  case R of
-    [] -> true;
-     _ -> false
-  end.
-%% to do using string manipulation
+
+isPermutation(S1,S2) when length(S1) =:= length(S2)->
+  lists:sort(S1) =:= lists:sort(S2);
+isPermutation(S1,S2) -> false.
